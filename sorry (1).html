@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IM SORRY :(</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin-top: 50px;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      position: relative;
+      transition: all 0.3s ease;
+    }
+    button:hover {
+      background-color: #45a049;
+    }
+    #buttonContainer {
+      margin-top: 20px;
+      position: relative;
+    }
+  </style>
+</head>
+<body>
+  <h1>HI BEBI :(</h1>
+  <p>Pls forgive me </p>
+  
+  <div id="buttonContainer">
+    <button id="stayButton" onclick="moveStayButton()">NO</button>
+    <button id="goButton" onclick="celebrate()">YES cuz u r my baby</button>
+  </div>
+
+  <script>
+    const stayButton = document.getElementById("stayButton");
+    const goButton = document.getElementById("goButton");
+
+    let clickCount = 0;
+
+    function moveStayButton() {
+     
+      makeGoBigger();
+
+      
+      const randomX = Math.floor(Math.random() * 300) - 150;
+      const randomY = Math.floor(Math.random() * 300) - 150;
+
+      stayButton.style.position = "absolute";
+      stayButton.style.left = `${randomX}px`;
+      stayButton.style.top = `${randomY}px`;
+
+      clickCount++;
+    }
+
+    function makeGoBigger() {
+     
+      goButton.style.padding = `${10 + clickCount * 5}px ${20 + clickCount * 10}px`;
+      goButton.style.fontSize = `${16 + clickCount * 2}px`;
+    }
+
+    function celebrate() {
+      
+      const celebrationWindow = window.open("", "Celebration", "width=600,height=400");
+      celebrationWindow.document.write(`
+        <html>
+          <head>
+            <title>HEHEHE YAHAY!</title>
+            <style>
+              body {
+                font-family: Arial, sans-serif;
+                text-align: center;
+                margin-top: 50px;
+              }
+              h1 {
+                color: gold;
+                font-size: 50px;
+              }
+              .celebration {
+                font-size: 30px;
+                color: #ff6347;
+              }
+              .fireworks {
+                font-size: 40px;
+                color: #ff1493;
+                animation: fireworks 1s infinite;
+              }
+              @keyframes fireworks {
+                0% { transform: scale(1); opacity: 1; }
+                50% { transform: scale(1.2); opacity: 0.6; }
+                100% { transform: scale(1); opacity: 1; }
+              }
+            </style>
+          </head>
+          <body>
+            <h1>HEHEHE YAHAY!!!!!</h1>
+            <p class="celebration">i wont do it again baby madam im sorry :( !</p>
+            <p class="fireworks"><3</p>
+          </body>
+        </html>
+      `);
+    }
+  </script>
+</body>
+</html>
